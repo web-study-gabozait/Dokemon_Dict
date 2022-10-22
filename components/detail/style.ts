@@ -8,6 +8,7 @@ export const DetailContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding-bottom: 30px;
 `;
 
 export const DetailPanel = styled.div`
@@ -16,7 +17,7 @@ export const DetailPanel = styled.div`
   background-color: ${palette.main};
 `;
 
-export const DetailInfoWrap = styled.div`
+export const DetailInfoPreviewWrap = styled.div`
   width: 1252px;
   display: flex;
   align-items: center;
@@ -32,19 +33,10 @@ export const DetailInfoImg = styled.img`
   object-fit: cover;
   margin: 0px auto;
 `;
-
-export const DetailInfoTextWrap = styled.div`
-  width: 626px;
-  min-height: 600px;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: ${({ theme }) => theme.backgroundColor2};
-  padding: 40px;
-`;
-
-export const DetailInfoTextName = styled.h1`
-  font-size: 40px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.contrast};
-  margin-bottom: 20px;
+export const DetailInfoWrap = styled.div`
+  width: 1252px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 174px;
+  column-gap: 40px;
 `;

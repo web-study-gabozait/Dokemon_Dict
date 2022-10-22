@@ -10,8 +10,8 @@ const HomePage: NextPage = () => {
 export const getServerSideProps = async () => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery(["pokemon/getPokemons", 644], () =>
-    pokemonRepository.getPokemons({ limit: 20, offset: 644 })
+  await queryClient.prefetchQuery("pokemon/getPokemons", () =>
+    pokemonRepository.getPokemons({ limit: 40, offset: 0 })
   );
 
   return {

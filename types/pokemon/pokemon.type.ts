@@ -33,6 +33,14 @@ export interface PokemonAbility {
 
 export interface PokemonMove {
   move: { name: string; url: string };
+  version_group_details: PokemonMoveVersionDetail[];
+}
+
+export interface PokemonMoveVersionDetail {
+  move_learn_method: {
+    name: string;
+    url: string;
+  };
 }
 
 export interface PokemonType {

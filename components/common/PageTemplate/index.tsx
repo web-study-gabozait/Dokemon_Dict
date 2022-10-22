@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import DarkmodeButton from "../DarkmodeButton";
 import { PageTemplateContainer } from "./style";
 
 interface Props {
@@ -6,7 +7,12 @@ interface Props {
 }
 
 const PageTemplate = ({ children }: Props) => {
-  return <PageTemplateContainer>{children}</PageTemplateContainer>;
+  return (
+    <PageTemplateContainer>
+      {children}
+      <DarkmodeButton />
+    </PageTemplateContainer>
+  );
 };
 
 export default PageTemplate;

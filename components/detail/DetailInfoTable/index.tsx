@@ -14,12 +14,10 @@ interface Props {
 }
 
 const DetailInfoTable = ({ data }: Props) => {
-  console.log(data);
-
   return (
     <DetailInfoTableContainer>
       <DetailInfoTableTr>
-        <DetailInfoTableTh>타입</DetailInfoTableTh>
+        <DetailInfoTableTh>Type</DetailInfoTableTh>
         <DetailInfoTableTypeTd>
           {data.types.map((type) => (
             <DetailInfoTableType
@@ -35,16 +33,12 @@ const DetailInfoTable = ({ data }: Props) => {
         </DetailInfoTableTypeTd>
       </DetailInfoTableTr>
       <DetailInfoTableTr>
-        <DetailInfoTableTh>키</DetailInfoTableTh>
+        <DetailInfoTableTh>Height</DetailInfoTableTh>
         <DetailInfoTableTd>{data.height}m</DetailInfoTableTd>
       </DetailInfoTableTr>
       <DetailInfoTableTr>
-        <DetailInfoTableTh>몸무게</DetailInfoTableTh>
+        <DetailInfoTableTh>Weight</DetailInfoTableTh>
         <DetailInfoTableTd>{(data.weight / 10).toFixed(1)}kg</DetailInfoTableTd>
-      </DetailInfoTableTr>
-      <DetailInfoTableTr>
-        <DetailInfoTableTh>몸무게</DetailInfoTableTh>
-        <DetailInfoTableTd>asdad</DetailInfoTableTd>
       </DetailInfoTableTr>
     </DetailInfoTableContainer>
   );

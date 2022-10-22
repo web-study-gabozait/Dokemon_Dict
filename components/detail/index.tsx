@@ -1,37 +1,44 @@
-import { useRouter } from "next/router";
-import { useGetPokemon } from "../../quries/pokemon/pokemon.query";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import useDetail from "../../hooks/detail/useDetail";
+import DetailInfoMove from "./DetailInfoMove";
+const PokemonBigCard = dynamic(() => import("../common/PokemonBigCard"), {
+  ssr: false,
+});
+
+import DetailInfoStat from "./DetailInfoStat";
 import DetailInfoTable from "./DetailInfoTable";
 import {
   DetailContainer,
   DetailInfoImg,
-  DetailInfoTextName,
-  DetailInfoTextWrap,
+  DetailInfoPreviewWrap,
   DetailInfoWrap,
   DetailPanel,
 } from "./style";
 
 const Detail = () => {
-  const router = useRouter();
-
-  const pokemonId = router.query.id;
-
-  const { data: serverPokemonData } = useGetPokemon({
-    id: pokemonId as string,
-  });
-
-  console.log(serverPokemonData);
+  const { pokemonId, serverPokemonData } = useDetail();
 
   return (
     <DetailContainer>
       <DetailPanel />
-      <DetailInfoWrap>
+      <DetailInfoPreviewWrap>
         <DetailInfoImg
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`}
         />
-        <DetailInfoTextWrap>
-          <DetailInfoTextName>{serverPokemonData?.name}</DetailInfoTextName>
-          {serverPokemonData && <DetailInfoTable data={serverPokemonData} />}
-        </DetailInfoTextWrap>
+        {serverPokemonData && (
+          <PokemonBigCard isOverflowView={false} title={serverPokemonData.name}>
+            <DetailInfoTable data={serverPokemonData} />
+            <DetailInfoStat data={serverPokemonData.stats} />
+          </PokemonBigCard>
+        )}
+      </DetailInfoPreviewWrap>
+      <DetailInfoWrap>
+        <PokemonBigCard isOverflowView={true} title="moves">
+          {serverPokemonData && (
+            <DetailInfoMove data={serverPokemonData.moves} />
+          )}
+        </PokemonBigCard>
       </DetailInfoWrap>
     </DetailContainer>
   );
