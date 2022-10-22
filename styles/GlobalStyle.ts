@@ -13,6 +13,18 @@ const GlobalStyle = createGlobalStyle`
       text-decoration: none;
     }
 
+    @keyframes skeleton {
+      0% {
+        background-color: rgba(182, 182, 182, 0.1);
+      }
+      50% {
+        background-color: rgba(182, 182, 182, 0.25);
+      }
+      100% {
+        background-color: rgba(182, 182, 182, 0.1);
+    }
+    }
+
     ${reset}
 `;
 

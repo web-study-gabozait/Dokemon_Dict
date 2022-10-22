@@ -1,6 +1,9 @@
 import { customAxios } from "../../libs/axios";
-import { PokemonsResponse } from "../../types/pokemon/pokemon.type";
-import { getPokemonsParam } from "./pokemon.param";
+import {
+  PokemonResponse,
+  PokemonsResponse,
+} from "../../types/pokemon/pokemon.type";
+import { getPokemonParam, getPokemonsParam } from "./pokemon.param";
 
 class PokemonRepository {
   public async getPokemons({
@@ -10,6 +13,12 @@ class PokemonRepository {
     const { data } = await customAxios.get(
       `/pokemon/?limit=${limit}&offset=${offset}`
     );
+
+    return data;
+  }
+
+  public async getPokemon({ id }: getPokemonParam): Promise<PokemonResponse> {
+    const { data } = await customAxios.get(`/pokemon/${id}`);
 
     return data;
   }
