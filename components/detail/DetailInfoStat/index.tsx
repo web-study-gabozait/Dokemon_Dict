@@ -14,7 +14,7 @@ const DetailInfoStat = ({ data }: Props) => {
   return (
     <DetailInfoStatContainer>
       {data.map((stat) => (
-        <DetailInfoStatWrap>
+        <DetailInfoStatWrap key={stat.stat.name}>
           <DetailInfoStatTitle>{stat.stat.name}</DetailInfoStatTitle>
           <DetailInfoStatBaseStat>{stat.base_stat}</DetailInfoStatBaseStat>
         </DetailInfoStatWrap>

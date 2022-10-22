@@ -13,7 +13,7 @@ const DetailInfoMove = ({ data }: Props) => {
   return (
     <>
       {data.map((move) => (
-        <DetailInfoMoveContainer>
+        <DetailInfoMoveContainer id={move.move.name}>
           <DetailInfoMoveName>{move.move.name}</DetailInfoMoveName>
           <DetailInfoMoveLearnLocation>
             acquired by {move.version_group_details[0].move_learn_method.name}

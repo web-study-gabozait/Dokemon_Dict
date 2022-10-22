@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { palette } from "../../../styles/palette";
 
 export const DetailInfoTableContainer = styled.div`
   width: 100%;
   border-collapse: collapse;
 `;
 
-export const DetailInfoTableTr = styled.tr`
+export const DetailInfoTableTr = styled.div`
   display: flex;
 `;
 

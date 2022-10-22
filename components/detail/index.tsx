@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import useDetail from "../../hooks/detail/useDetail";
 import DetailInfoMove from "./DetailInfoMove";
 const PokemonBigCard = dynamic(() => import("../common/PokemonBigCard"), {

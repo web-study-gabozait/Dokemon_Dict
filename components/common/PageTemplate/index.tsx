@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import DarkmodeButton from "../DarkmodeButton";
+import ScrollTopButton from "../ScrollTopButton";
 import { PageTemplateContainer } from "./style";
 
 interface Props {
@@ -11,6 +12,7 @@ const PageTemplate = ({ children }: Props) => {
     <PageTemplateContainer>
       {children}
       <DarkmodeButton />
+      <ScrollTopButton />
     </PageTemplateContainer>
   );
 };

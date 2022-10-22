@@ -7,11 +7,11 @@ const useHome = () => {
 
   const {
     data: serverPokemonsData,
-    isLoading,
+    isLoading: serverPokemonDataIsLoading,
     fetchNextPage,
   } = useGetPokemons({
     limit: 20,
-    offset: 644,
+    offset: 1,
   });
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const useHome = () => {
 
   return {
     ref,
+    serverPokemonDataIsLoading,
     serverPokemonsData,
   };
 };

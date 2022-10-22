@@ -44,3 +44,11 @@ export const HomeSearch = styled.input`
     color: ${palette.gray[200]};
   }
 `;
+
+export const HomeLoadingContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  justify-content: space-between;
+`;

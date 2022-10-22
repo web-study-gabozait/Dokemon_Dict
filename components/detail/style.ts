@@ -8,7 +8,7 @@ export const DetailContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding-bottom: 30px;
+  padding-bottom: 70px;
 `;
 
 export const DetailPanel = styled.div`

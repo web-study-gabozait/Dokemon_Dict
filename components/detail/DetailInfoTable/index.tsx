@@ -26,6 +26,7 @@ const DetailInfoTable = ({ data }: Props) => {
                   type.type.name
                 ).color,
               }}
+              key={type.type.name}
             >
               {type.type.name}
             </DetailInfoTableType>

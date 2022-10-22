@@ -1,7 +1,14 @@
 import useHome from "../../hooks/home/useHome";
 import useHomeSearch from "../../hooks/home/useHomeSearch";
 import PokemonCard from "../common/PokemonCard";
-import { HomeContainer, HomePanel, HomeSearch, HomeWrap } from "./style";
+import HomeLoading from "./HomeLoading";
+import {
+  HomeContainer,
+  HomeLoadingContainer,
+  HomePanel,
+  HomeSearch,
+  HomeWrap,
+} from "./style";
 
 const Home = () => {
   const { ref, serverPokemonsData } = useHome();
@@ -24,8 +31,10 @@ const Home = () => {
             <PokemonCard data={item} key={item.name} />
           ))
         )}
+        <HomeLoadingContainer ref={ref}>
+          <HomeLoading />
+        </HomeLoadingContainer>
       </HomeWrap>
-      <div ref={ref}>sss</div>
     </HomeContainer>
   );
 };
